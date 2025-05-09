@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% set page_class = "graphs-page" %}
+{% block title %}Graphs | Norovirus Tracker{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/graph.css">
+</head>
+<body>
+
+<h1>📊 Norovirus Global Statistics Dashboard</h1>
+<p class="intro">Explore the latest analytics of Norovirus spread, mortality, recovery trends, and medical correlations from our simulated global dataset. These charts are designed to provide quick visual insights for health experts, researchers, and public viewers.</p>
+
+<!-- 🌍 GLOBAL OVERVIEW -->
+<section>
+    <h2>🌍 Global Overview</h2>
+
+    <h3>🧪 Cases Per Country</h3>
+    <p>This chart displays the number of Norovirus cases reported in five major countries. It highlights geographical zones with significant case loads, assisting in recognizing high-risk nations.</p>
+    <img src="data:image/png;base64,{{ cases_graph }}" alt="Cases Per Country Line Chart">
+
+    <h3>💀 Deaths Per Country</h3>
+    <p>This chart outlines Norovirus death counts country-wise. Countries with high death rates may need better healthcare access or faster outbreak responses.</p>
+    <img src="data:image/png;base64,{{ deaths_graph }}" alt="Deaths Per Country Line Chart">
+
+    <h3>💚 Recovered Cases Per Country</h3>
+    <p>This graph shows how many individuals have recovered in each country, giving a quick view into treatment effectiveness and healthcare system recovery support.</p>
+    <img src="data:image/png;base64,{{ recovery_graph }}" alt="Recovered Cases Line Chart">
+</section>
+
+<!-- 🇮🇳 INDIA FOCUS -->
+<section>
+    <h2>🇮🇳 India Focus: state-Level Insights</h2>
+
+    <h3>🏙️ Top 5 states by Reported Cases</h3>
+    <p>Find out which Indian states have reported the most Norovirus cases. This helps in locating urban outbreak zones and tailoring local responses.</p>
+    <img src="data:image/png;base64,{{ city_cases_graph }}" alt="Cases Per Top 5 States Line Chart">
+
+    <h3>⚰️ Top 5 states by Reported Deaths</h3>
+    <p>Among Indian states, these five reported the highest fatalities due to Norovirus. The data can help pinpoint states that may need better hospital preparedness or quicker response protocols.</p>
+    <img src="data:image/png;base64,{{ city_deaths_graph }}" alt="Deaths Per Top 5 States Line Chart">
+</section>
+
+<!-- 👥 DEMOGRAPHIC IMPACT -->
+<section>
+    <h2>👥 Demographic Impact</h2>
+
+    <h3>📊 Survival Rate by Age Group</h3>
+    <p>This chart compares the survival rate across different age groups (0–18, 19–35, 36–50, 51+). Older age groups typically show lower survival rates due to weaker immune systems or presence of chronic illness.</p>
+    <img src="data:image/png;base64,{{ survival_rate_graph }}" alt="Survival Rate Line Chart">
+</section>
+
+<!-- ❤️ MEDICAL RISK FACTORS -->
+<section>
+    <h2>❤️ Medical Risk Factors & Death Analysis</h2>
+
+    <h3>☠️ Deaths by Comorbidity</h3>
+    <p>This bar chart displays the number of Norovirus deaths among patients with comorbidities such as Heart Disease, Diabetes, and COPD. These conditions raise the risk of complications and fatal outcomes.</p>
+    <img src="data:image/png;base64,{{ death_comorbidity_graph }}" alt="Deaths by Comorbidities Bar Chart">
+</section>
+
+<!-- 📅 TIME SERIES ANALYSIS -->
+<section>
+    <h2>📅 Time Series Analysis (2021–2023)</h2>
+
+    <h3>📈 Norovirus Cases Over Time</h3>
+    <p>This line chart tracks the number of Norovirus cases reported year-by-year from 2021 to 2023. Analyzing trends over time helps us detect seasonal patterns, changes in infection rates, or the effect of public health initiatives.</p>
+    <img src="data:image/png;base64,{{ cases_2021_2023 }}" alt="2021 to 2023 Norovirus Cases">
+</section>
+
+<section>
+    <h2>⚧ Gender-wise Case Distribution</h2>
+
+    <h3>📌 Male vs Female Cases</h3>
+    <p>This graph compares the number of Norovirus cases reported among males and females. This helps identify demographic vulnerability and target specific awareness efforts.</p>
+    <img src="data:image/png;base64,{{ gender_distribution_graph }}" alt="Gender Distribution Bar Chart">
+</section>
+
+<!-- 🏥 HOSPITALIZATION TRENDS -->
+<section>
+    <h2>🏥 Hospitalization Rate Over Time</h2>
+
+    <h3>📆 Monthly/Yearly Hospitalization Trends</h3>
+    <p>This graph tracks how many Norovirus-infected patients were hospitalized over time. It provides insights into the burden on healthcare systems and outbreak severity.</p>
+    <img src="data:image/png;base64,{{ hospitalization_graph }}" alt="Hospitalization Over Time Chart">
+</section>
+
+<!-- Navigation Buttons -->
+<section class="links-container">
+    <a class="nav-button" href="/">← Back to Home</a>
+    <a class="nav-button" href="/symptoms">Symptoms</a>
+    <a class="nav-button" href="/solution">Prevention</a>
+</section>
+</body>
+</html>
+
+{% endblock %}

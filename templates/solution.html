@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Solutions | Norovirus Tracker{% endblock %}
+{% block content %}
+{% set page_class = "solution-page" %}
+
+<div class="container text-center text-dark">
+    <link rel="stylesheet" href="\static\css\solution.css">
+
+    <h1>Solutions & Prevention for Norovirus</h1>
+
+    <h2>Treatment & Management</h2>
+    <p>Norovirus usually resolves on its own, but proper care can speed up recovery:</p>
+    <ul>
+        <li data-tooltip="Stay hydrated!"><strong>Rehydration:</strong> Use ORS, electrolyte water, coconut water, or broth.</li>
+        <li><strong>Diet Adjustments:</strong> Follow the BRAT diet. Avoid heavy, spicy, or oily food.</li>
+        <li><strong>Medications:</strong>
+            <ul>
+                <li>💊 <strong>Anti-nausea:</strong> Ondansetron in severe vomiting.</li>
+                <li>🤒 <strong>Pain relief:</strong> Paracetamol to reduce fever and pain.</li>
+                <li>🚫 <strong>No anti-diarrheal drugs</strong> without doctor advice.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Prevention Tips</h2>
+    <ul>
+        <li><strong>🧼 Handwashing:</strong> Wash with soap; sanitizer isn’t enough!</li>
+        <li><strong>🍱 Safe Food Practices:</strong> Clean fruits, cook seafood, avoid food from sick people.</li>
+        <li><strong>🧽 Disinfect:</strong> Use bleach-based cleaners.</li>
+        <li><strong>🏠 Isolation:</strong> Avoid contact for 48 hours after symptoms stop.</li>
+        <li><strong>🧺 Laundry:</strong> Wash soiled clothes in hot water and dry fully.</li>
+    </ul>
+
+    <h2>Quick Remedies</h2>
+    <div class="row mt-3 justify-content-center">
+        <div class="col-md-3 remedy-card">
+            <div class="card bg-light text-dark p-3">
+                <i class="fas fa-mug-hot fa-2x mb-2"></i>
+                <h5>ORS Solution</h5>
+                <p>Salt + sugar + water = recovery boost.</p>
+            </div>
+        </div>
+        <div class="col-md-3 remedy-card">
+            <div class="card bg-light text-dark p-3">
+                <i class="fas fa-seedling fa-2x mb-2"></i>
+                <h5>Ginger Tea</h5>
+                <p>Natural anti-nausea remedy.</p>
+            </div>
+        </div>
+        <div class="col-md-3 remedy-card">
+            <div class="card bg-light text-dark p-3">
+                <i class="fas fa-bread-slice fa-2x mb-2"></i>
+                <h5>BRAT Diet</h5>
+                <p>Gentle on the stomach.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Do's & Don'ts</h2>
+    <div class="row text-start mt-3">
+        <div class="col-md-6">
+            <h4 class="text-success">✅ Do's</h4>
+            <ul>
+                <li>Drink fluids and ORS frequently.</li>
+                <li>Disinfect surfaces regularly.</li>
+                <li>Wash hands for 20+ seconds.</li>
+                <li>Rest and isolate.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4 class="text-danger">❌ Don'ts</h4>
+            <ul>
+                <li>Avoid sugary or fizzy drinks.</li>
+                <li>Don’t skip meals entirely.</li>
+                <li>Don't ignore persistent vomiting.</li>
+                <li>No food prep while infected.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Norovirus vs. Other Bugs</h2>
+    <ul>
+        <li><strong>Food Poisoning:</strong> May include fever & longer recovery.</li>
+        <li><strong>Rotavirus:</strong> Affects kids mostly; vaccine available.</li>
+        <li><strong>Flu:</strong> Respiratory issues—not usually gut-related.</li>
+    </ul>
+
+    <p class="mt-4">
+        <strong>Remember:</strong> Norovirus spreads fast but is manageable with care. Hydration and hygiene are your best defense!
+    </p>
+</div>
+
+{% endblock %}

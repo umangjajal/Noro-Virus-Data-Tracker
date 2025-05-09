@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Norovirus Self-Check</title>
+    <link rel="stylesheet" href="../static/css/self-check.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>🩺 Norovirus Self-Assessment</h1>
+        <p class="description">Answer the following questions to assess your risk level:</p>
+
+        <form id="quizForm">
+            <div class="question">
+                <label>Do you have nausea or vomiting?</label>
+                <div class="options">
+                    <input type="radio" name="q1" value="yes"> Yes
+                    <input type="radio" name="q1" value="no"> No
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Are you experiencing diarrhea?</label>
+                <div class="options">
+                    <input type="radio" name="q2" value="yes"> Yes
+                    <input type="radio" name="q2" value="no"> No
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Have you had close contact with someone infected recently?</label>
+                <div class="options">
+                    <input type="radio" name="q3" value="yes"> Yes
+                    <input type="radio" name="q3" value="no"> No
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Do you have a fever?</label>
+                <div class="options">
+                    <input type="radio" name="q4" value="yes"> Yes
+                    <input type="radio" name="q4" value="no"> No
+                </div>
+            </div>
+
+            <button type="button" onclick="checkResult()">Take the Self-Check</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkResult() {
+            const answers = ['q1', 'q2', 'q3', 'q4'].map(q => 
+                document.querySelector(`input[name="${q}"]:checked`)?.value
+            );
+
+            if (answers.includes(undefined)) {
+                alert("Please answer all questions.");
+                return;
+            }
+
+            const yesCount = answers.filter(a => a === 'yes').length;
+
+            let resultText = '';
+            if (yesCount >= 3) {
+                resultText = "⚠️ High risk: Please consult a doctor immediately.";
+            } else if (yesCount === 2) {
+                resultText = "😷 Moderate risk: Stay hydrated and monitor symptoms.";
+            } else {
+                resultText = "✅ Low risk: Keep up with hygiene and rest.";
+            }
+
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>

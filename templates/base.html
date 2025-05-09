@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Norovirus Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+    <!-- Dark Mode Script -->
+    <script>
+        window.onload = function () {
+            const mode = localStorage.getItem("dark-mode");
+            const icon = document.getElementById("darkModeIcon");
+
+            if (mode === "enabled") {
+                document.body.classList.add("dark-mode");
+                if (icon) icon.textContent = "☀️";
+            }
+        };
+
+        function toggleDarkMode() {
+            const icon = document.getElementById("darkModeIcon");
+            document.body.classList.toggle("dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("dark-mode", "enabled");
+                icon.textContent = "☀️"; // Light mode icon
+            } else {
+                localStorage.setItem("dark-mode", "disabled");
+                icon.textContent = "🌙"; // Dark mode icon
+            }
+        }
+    </script>
+</head>
+<body class="{{ page_class }}">
+    
+    <div class="content">
+        <header>
+            <div class="logo-container">
+                <a href="/" class="logo-button">
+                    <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Norovirus Tracker Logo">
+                    <span>Norovirus Tracker</span>
+                </a> 
+            </div>
+            <nav class="navbar">
+                <a href="/">Home</a>
+                <a href="/symptoms">Symptoms</a>
+                <a href="/solution">Solutions</a>
+                <a href="/graphs">Graphs</a>
+                <!-- Dark mode toggle icon -->
+                <button onclick="toggleDarkMode()" id="darkModeIcon" class="dark-toggle">🌙</button>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Norovirus Tracker. All rights reserved.</p>
+                <p>Stay safe and informed. Developed by <strong>Umang Jajal</strong>.</p>
+                <div class="footer-links">
+                    <a href="/">Home</a> | 
+                    <a href="/symptoms">Symptoms</a> | 
+                    <a href="/solution">Solutions</a> | 
+                    <a href="/graphs">Graphs</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

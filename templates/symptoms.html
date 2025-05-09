@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Symptoms | Norovirus Tracker{% endblock %}
+{% block content %}
+{% set page_class = "symptoms-page" %}
+
+<div class="container-fluid">
+    <link rel="stylesheet" href="\static\css\symptoms.css">
+
+        <!-- 🟢 Main Content Column -->
+        <div class="col-md-3">
+            <h1>Symptoms of Norovirus</h1>
+
+            <h2 class="mt-4">How Norovirus Spreads</h2>
+            <ul>
+                <li><strong>Person-to-Person Contact:</strong> Shaking hands, sharing utensils, or caring for an infected person.</li>
+                <li><strong>Contaminated Food & Water:</strong> Eating food prepared by an infected person or drinking contaminated water.</li>
+                <li><strong>Surface Contamination:</strong> Touching infected surfaces (doorknobs, tables, shared electronics) and then touching the mouth.</li>
+                <li><strong>Aerosolized Vomit Particles:</strong> Tiny particles can become airborne when an infected person vomits.</li>
+            </ul>
+
+            <h2 class="mt-4">High-Risk Environments</h2>
+            <ul>
+                <li><strong>Hospitals & Nursing Homes:</strong> Elderly and immunocompromised individuals are at higher risk.</li>
+                <li><strong>Schools & Daycare Centers:</strong> Close contact and poor hygiene lead to rapid spread.</li>
+                <li><strong>Cruise Ships & Restaurants:</strong> Outbreaks occur due to shared food and water sources.</li>
+            </ul>
+
+            <h2 class="mt-4">Incubation & Duration</h2>
+            <ul>
+                <li>Symptoms appear <strong>12 to 48 hours</strong> after exposure.</li>
+                <li>The illness lasts <strong>1 to 3 days</strong>, but shedding of the virus can continue for <strong>up to 2 weeks</strong>.</li>
+            </ul>
+
+            <!-- 🔶 Symptom Severity Scale -->
+            <h2 class="mt-4">Symptom Severity Scale</h2>
+            <div class="mb-4">
+                <p>Use this simple scale to identify how serious your symptoms are:</p>
+                <ul class="list-group text-dark">
+                    <li class="list-group-item bg-warning"><strong>Mild:</strong> Headache, light cramps, slight fatigue.</li>
+                    <li class="list-group-item bg-orange"><strong>Moderate:</strong> Vomiting, diarrhea, fever for 1–2 days.</li>
+                    <li class="list-group-item bg-danger text-white"><strong>Severe:</strong> Dehydration, inability to keep fluids, persistent vomiting – seek medical attention.</li>
+                </ul>
+            </div>
+
+            <h2 class="mt-4">Complications of Norovirus</h2>
+            <p>While norovirus usually resolves on its own, severe cases may lead to:</p>
+            <ul>
+                <li><strong>Severe Dehydration:</strong> May require hospitalization, especially for young children and elderly individuals.</li>
+                <li><strong>Electrolyte Imbalance:</strong> Loss of essential minerals can cause dizziness and irregular heartbeat.</li>
+                <li><strong>Malnutrition:</strong> Persistent vomiting and diarrhea can lead to nutrient deficiencies.</li>
+                <li><strong>Secondary Infections:</strong> Weakened immunity may make individuals vulnerable to other infections.</li>
+            </ul>
+
+            <h2 class="mt-4">Diagnosis & Testing</h2>
+            <ul>
+                <li><strong>Clinical Diagnosis:</strong> Based on symptoms, especially during outbreaks.</li>
+                <li><strong>Laboratory Testing:</strong> Stool samples can confirm norovirus in severe cases.</li>
+            </ul>
+        </div>
+
+        <!-- 🟣 Sidebar with “Did You Know?” Facts -->
+                <h5 class="text-info">💡 Did You Know?</h5>
+                <ul class="list-unstyled mt-3 small">
+                    <li>✅ Norovirus causes over 685 million cases globally each year.</li>
+                    <li>✅ You can be contagious even after symptoms go away.</li>
+                    <li>✅ Alcohol-based sanitizers don’t kill norovirus well.</li>
+                    <li>✅ Only a few virus particles can make you sick.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

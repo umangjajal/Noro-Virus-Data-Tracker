@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% set page_class = "home-page" %}
+{% block title %}Home | Norovirus Tracker{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+<body>
+
+<div class="main-content">
+
+    <div class="section">
+        <h2 class="topic">What is Norovirus?</h2>
+        <p>Norovirus is a highly contagious virus that causes stomach and intestinal inflammation, leading to symptoms like nausea, vomiting, diarrhea, and stomach cramps. It spreads easily through contaminated food, water, surfaces, and person-to-person contact. Norovirus is the leading cause of gastroenteritis worldwide, affecting people of all ages.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="topic">Symptoms of Norovirus</h2>
+        <ul>
+            <li>Nausea and vomiting</li>
+            <li>Diarrhea</li>
+            <li>Stomach cramps or pain</li>
+            <li>Mild fever, chills, headache, and muscle aches</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="topic">How It Spreads</h2>
+        <ul>
+            <li>Contaminated food and water</li>
+            <li>Close contact with infected individuals</li>
+            <li>Touching contaminated surfaces and then touching the mouth</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="topic">Prevention Tips</h2>
+        <ul>
+            <li>Wash hands thoroughly with soap and water</li>
+            <li>Clean and disinfect surfaces frequently</li>
+            <li>Avoid consuming food or water prepared by someone ill</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="topic">🩺 Worried You Might Have Norovirus?</h2>
+        <p>Take a quick <strong>self-assessment</strong> quiz to find out your risk level based on symptoms and exposure history.</p>
+        <a class="button-link" href="/self-check">Take the Self-Check</a>
+    </div>
+
+    <div class="section fun-fact">
+        <h2 class="topic">🤔 Did You Know?</h2>
+        <p>Norovirus can survive on surfaces for up to <strong>2 weeks</strong> and can withstand many common disinfectants. That’s why handwashing is more effective than sanitizer!</p>
+    </div>
+
+    <!-- Pie Charts -->
+    <div class="pie-chart-container">
+        <div class="pie-chart">
+            <h2>Norovirus Cases by Country</h2>
+            <img src="data:image/png;base64,{{ pie_chart }}" alt="Norovirus Cases Pie Chart">
+        </div>
+
+        <div class="pie-chart">
+            <h2>Cases by Age Group</h2>
+            <img src="data:image/png;base64,{{ age_group_pie_chart }}" alt="Age Group Pie Chart">
+        </div>
+        
+        <div class="pie-chart">
+            <h2>Cases in People with Diabetes</h2>
+            <img src="data:image/png;base64,{{ diabetes_pie_chart }}" alt="Diabetes Pie Chart">
+        </div>
+
+        <div class="pie-chart">
+            <h2>Cases in People with High Blood Pressure</h2>
+            <img src="data:image/png;base64,{{ bp_pie_chart }}" alt="Blood Pressure Pie Chart">
+        </div>
+    </div>
+
+    <div class="section">
+        <p>While norovirus infections are unpleasant, they usually resolve on their own within 1 to 3 days. Staying hydrated is crucial for recovery. If symptoms are severe, medical attention should be sought.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="topic">📊 Norovirus Summary</h2>
+        <table class="summary-table">
+            <tr>
+                <th>Metric</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Total Reported Cases</td>
+                <td id="totalCasesTable">{{ total_cases }}</td>
+            </tr>
+            <tr>
+                <td>Total Deaths</td>
+                <td id="totalDeaths">{{ total_deaths }}</td>
+            </tr>
+            <tr>
+                <td>Total Recovered</td>
+                <td id="totalRecovered">{{ total_recovered }}</td>
+            </tr>
+            <tr>
+                <td>Active Cases</td>
+                <td id="activeCases">{{ active_cases }}</td>
+            </tr>
+            <tr>
+                <td>Cases with Diabetes</td>
+                <td>{{ diabetes_cases }}</td>
+            </tr>
+            <tr>
+                <td>Cases with High Blood Pressure</td>
+                <td>{{ high_bp_cases }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="section feedback-section">
+        <h2 class="topic">💬 Help Improve This Tracker</h2>
+        <p>Have feedback or spotted incorrect data? Let us know!</p>
+        <a class="button-link" href="/feedback">Send Feedback</a>
+    </div>
+
+    <div class="section links-container">
+        <a href="/symptoms">Learn About Symptoms</a>
+        <a href="/solution">Prevention & Solutions</a>
+        <a href="/graphs">View Statistics & Graphs</a>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+{% endblock %}
