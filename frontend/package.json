@@ -7,9 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "biome check .",
+    "lint": "biome lint .",
     "format": "biome format --write .",
-    "check": "tsc -b && biome check ."
+    "check": "tsc -b && biome lint ."
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
